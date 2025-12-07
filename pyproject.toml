@@ -4,15 +4,15 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mcp-scientific-calculator"
-version = "1.0.0"
-description = "Model Context Protocol server for advanced mathematical calculations (SymPy, NumPy, SciPy, pandas)"
+version = "1.0.1"
+description = "Production-ready Model Context Protocol server for advanced mathematical calculations (SymPy, NumPy, SciPy, pandas)"
 readme = "README.md"
 requires-python = ">=3.8"
 license = {text = "MIT"}
 authors = [
     {name = "MCP Calculator Team", email = "lucyjohn@example.com"}
 ]
-keywords = ["mcp", "model-context-protocol", "calculator", "math", "sympy", "numpy", "scipy", "pandas"]
+keywords = ["mcp", "model-context-protocol", "calculator", "math", "sympy", "numpy", "scipy", "pandas", "scientific-computing"]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Developers",
@@ -46,6 +46,16 @@ Homepage = "https://github.com/thinkitpossible/CalcMCP"
 Documentation = "https://github.com/thinkitpossible/CalcMCP#readme"
 Repository = "https://github.com/thinkitpossible/CalcMCP"
 Issues = "https://github.com/thinkitpossible/CalcMCP/issues"
+"Bug Reports" = "https://github.com/thinkitpossible/CalcMCP/issues"
+"Source Code" = "https://github.com/thinkitpossible/CalcMCP"
+
+[project.scripts]
+mcp-calculator = "mcp_scientific_calculator.mcp_server:main"
 
 [tool.setuptools]
-py-modules = ["calculator", "mcp_server", "advanced_math_problems", "verify_production_readiness"]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["mcp_scientific_calculator*"]
+namespaces = false

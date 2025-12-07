@@ -12,7 +12,7 @@ import sys
 import logging
 from typing import Any, Dict, List
 from dataclasses import dataclass, asdict
-from calculator import CALCULATOR_TOOLS
+from .calculator import CALCULATOR_TOOLS
 import numpy as np
 
 # 配置日志到 stderr（不污染 stdout JSON-RPC 输出）

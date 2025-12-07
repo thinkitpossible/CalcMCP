@@ -11,16 +11,29 @@
 pip install sympy numpy scipy pandas
 ```
 
-### 2. Server Configuration
+## Server Configuration
 
-Add to your MCP client config (e.g., Claude Desktop `claude_desktop_config.json`):
+Add to your Claude Desktop config file:
 
 ```json
 {
   "mcpServers": {
     "scientific-calculator": {
+      "command": "mcp-calculator",
+      "args": [],
+      "env": {}
+    }
+  }
+}
+```
+
+Alternatively, use Python module invocation:
+```json
+{
+  "mcpServers": {
+    "scientific-calculator": {
       "command": "python",
-      "args": ["-u", "path/to/mcp_server.py"],
+      "args": ["-m", "mcp_scientific_calculator"],
       "env": {}
     }
   }
@@ -32,8 +45,9 @@ Add to your MCP client config (e.g., Claude Desktop `claude_desktop_config.json`
 {
   "mcpServers": {
     "scientific-calculator": {
-      "command": "python",
-      "args": ["-u", "F:\\AAchengguoofAI\\cuz_caculat\\mcp_server.py"]
+      "command": "mcp-calculator",
+      "args": [],
+      "env": {}
     }
   }
 }
@@ -44,8 +58,9 @@ Add to your MCP client config (e.g., Claude Desktop `claude_desktop_config.json`
 {
   "mcpServers": {
     "scientific-calculator": {
-      "command": "python3",
-      "args": ["-u", "/path/to/mcp_server.py"]
+      "command": "mcp-calculator",
+      "args": [],
+      "env": {}
     }
   }
 }
